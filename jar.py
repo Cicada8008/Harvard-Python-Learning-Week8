@@ -134,19 +134,14 @@ if __name__ == "__main__":
         sugar = Cookie("Sugar")
         
         while True:
-            # Ask user for input continuously, capitalize the first letter of each word and remove extra whitespace
             user_input = input("\n           What flavour cookies would you like to add ?\n"
-                               
                                "\n🍪 🍪 Chocolate Chip, White Chocolate, Oatmeal Raisin, Peanut Butter, Sugar 🍪 🍪?\n" 
-
                                "\n            Type 'done' when finished adding cookies: ").title().strip()
 
-            # If user types 'Done', break the loop
             if user_input == "Done":  
                 print("Exiting.......")
                 break
 
-            # Handle valid cookie deposit based on user input
             if user_input == "Chocolate Chip":
                 cookie_jar.deposit(choc_chip_1)
             elif user_input == "White Chocolate":
@@ -160,12 +155,10 @@ if __name__ == "__main__":
             else:
                 print(f"Invalid cookie type: {user_input}") 
 
-        #displays amount of cookies as emojis 
         for cookie_type, count in cookie_jar.cookie_counts().items():
             emoji_list = "🍪" * count  
             print(f"{emoji_list} : {cookie_type} : {count}")
 
-        # Also display the total cookies as emojis
         print(f"Total Cookies: {cookie_jar}")
 
     except Exception as e:
